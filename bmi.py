@@ -8,19 +8,24 @@ def calc_bmi_usa(weight, height):
 
 selection = input('Welcome to BMI calculator, select "1" for US or "2" for metric ')
 
-if selection == '1':
+while True:
 
-    pounds = float(input('What is your weight in pounds? '))
-    inches = float(input('What is your height in inches? '))
+    if selection == '1':
 
-    print('Your BMI is ' + str(calc_bmi_usa(pounds, inches)))
+        pounds = float(input('What is your weight in pounds? '))
+        inches = float(input('What is your height in inches? '))
 
-elif selection == '2':
+        print('Your BMI is ' + str(round(calc_bmi_usa(pounds, inches),2)))
+        break
 
-    kilos = float(input('What is your weight in kilos? '))
-    meters = float(input('What is your height in meters? '))
+    elif selection == '2':
 
-    print('Your BMI is ' + str(calc_bmi_metric(kilos, meters)))
+        kilos = float(input('What is your weight in kilos? '))
+        meters = float(input('What is your height in meters? '))
 
-else:
-    print('Please enter a correct selection')
+        print('Your BMI is ' + str(round(calc_bmi_metric(kilos, meters),2)))
+        break
+
+    else:
+        selection = input('Please enter a correct selection ')
+        pass
